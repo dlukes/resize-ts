@@ -1,0 +1,7 @@
+extends base
+
+block mainContent
+  form(action="process", method="post", enctype="multipart/form-data")
+    input(type="file", name="photos", multiple)
+    input(type="text", name="sizes", value="104x78 320x240 600x450")
+    input(type="submit")

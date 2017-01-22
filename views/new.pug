@@ -1,0 +1,11 @@
+extends base
+
+block mainContent
+  form(action="process" method="post" enctype="multipart/form-data")
+    div.form-group
+      label(for="photos") Pictures:
+      input.form-control(type="file" name="photos" multiple)
+    div.form-group
+      label(for="sizes") Target sizes:
+      input.form-control(type="text" name="sizes" value="104x78 320x240 600x450")
+    button.btn.btn-default(type="submit") Submit

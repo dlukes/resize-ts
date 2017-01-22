@@ -1,8 +1,10 @@
-import * as express from "express";
+import * as Express from "express";
+import * as BodyParser from "body-parser";
+
 import { AppController } from "./controllers";
 import { Config } from "./config";
 
-const app: express.Application = express();
+const app: Express.Application = Express();
 const port: number = process.env.PORT || 3000;
 
 // configuration
@@ -13,10 +15,12 @@ app.set("trust proxy", true);
 
 // routing
 
+app.use(Config.appMount, Express.static("public"));
+app.use(BodyParser.json());
 app.use(Config.appMount, AppController);
 
 // start server
 
 app.listen(port, () => {
-  console.log(`Listening at localhost:${port}.`);
+  console.log(`Listening on localhost:${port}.`);
 });

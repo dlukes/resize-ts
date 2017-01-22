@@ -5,7 +5,7 @@ import { AppController } from "./controllers";
 import { Config } from "./config";
 
 const app: Express.Application = Express();
-const port: number = process.env.PORT || 3000;
+const port: number = process.env.PORT || Config.port;
 
 // configuration
 
